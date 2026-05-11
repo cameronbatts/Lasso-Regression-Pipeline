@@ -79,8 +79,11 @@ reports/     -> exported reports and outputs
 
 ---
 
-## Portfolio
+# Author
 
-Portfolio Website: https://cameron-batts.github.io/
+Cameron Batts
 
-GitHub Profile: https://github.com/cameron-batts
+GitHub: https://github.com/Cameron-Batts
+
+Portfolio: https://cameron-batts.github.io
+
