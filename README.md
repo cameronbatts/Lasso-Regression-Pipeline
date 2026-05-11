@@ -1,20 +1,71 @@
-# LASSO Regularization & Variable Selection
+# LASSO Regularization & Variable Selection via Cross-Validation
 
-**Tools:** Python · scikit-learn · LASSO · StandardScaler · GridSearchCV
+**Tools:** Python · scikit-learn · LASSO Regression · GridSearchCV · StandardScaler · Linear Regression · NumPy · Joblib
 
 ---
 
-## Problem
+## Business Problem
 
-With 100 predictors in a dataset where only 10 are truly relevant, standard regression models overfit by including noise variables, reducing reliability and interpretability.
+High-dimensional datasets often contain large numbers of irrelevant variables that can reduce model interpretability and increase overfitting risk. This project explores how LASSO regularization can improve regression model performance by automatically selecting the most relevant predictors while shrinking unnecessary coefficients toward zero.
 
-## Approach
+The objective was to compare LASSO regression against traditional linear regression in a controlled high-dimensional environment to evaluate feature selection effectiveness and model simplification.
 
-Built a LASSO regression pipeline in Python using scikit-learn with `StandardScaler` and `GridSearchCV` to tune the regularization parameter across 50 candidate values via cross-validation.
+---
 
-## Impact
+## Project Approach
 
-The model precisely identified all 10 relevant predictors and set the remaining 90 coefficients to zero, demonstrating how regularization improves model parsimony and supports more interpretable, production-ready predictions.
+- Simulated a high-dimensional regression dataset using `make_regression`
+- Generated:
+  - 1,000 observations
+  - 100 predictors
+  - 10 truly informative variables
+- Built a machine learning pipeline using:
+  - `StandardScaler`
+  - `Lasso`
+- Tuned the regularization parameter (`alpha`) using GridSearchCV
+- Compared:
+  - standard linear regression
+  - LASSO regularization
+- Evaluated how effectively LASSO isolated the truly informative variables
+- Serialized the trained regression model using Joblib
+
+---
+
+## Analytical Focus Areas
+
+- Regularization
+- Feature selection
+- High-dimensional regression
+- Cross-validation
+- Model simplification
+- Overfitting reduction
+- Pipeline workflows
+- Coefficient shrinkage
+- Model persistence
+
+---
+
+## Key Results
+
+### LASSO Variable Selection Performance
+
+- True informative predictors in dataset: **10**
+- Non-zero coefficients selected by LASSO: **10**
+- Non-zero coefficients from standard linear regression: **100**
+
+The LASSO model successfully identified the informative variables while eliminating irrelevant predictors, demonstrating the effectiveness of regularization and automated feature selection.
+
+---
+
+## Repository Structure
+
+```text
+data/        -> generated or processed datasets
+Images/      -> regression and coefficient visualizations
+models/      -> serialized trained models
+notebooks/   -> Jupyter notebook workflows
+reports/     -> exported reports and outputs
+```
 
 ---
 
@@ -22,9 +73,14 @@ The model precisely identified all 10 relevant predictors and set the remaining 
 
 | File | Description |
 |------|-------------|
-| `portfolio_python_module2.ipynb` | Jupyter notebook with full analysis |
-| `portfolio_python_module2.html` | Rendered HTML version |
+| `notebooks/lasso_regression_pipeline.ipynb` | Full LASSO regression and cross-validation workflow |
+| `models/linear_regression.joblib` | Serialized trained regression model saved using Joblib |
+| `reports/` | Exported reports and project outputs |
 
 ---
 
-*Part of my data & analytics portfolio — [cameronbatts.github.io](https://cameronbatts.github.io)*
+## Portfolio
+
+Portfolio Website: https://cameronbatts.github.io/
+
+GitHub Profile: https://github.com/cameronbatts
